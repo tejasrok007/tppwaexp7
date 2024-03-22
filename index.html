@@ -1,0 +1,50 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="manifest"href="manifest.json">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <img src="https://t4.ftcdn.net/jpg/04/91/45/15/360_F_491451522_ufXPQSzdSxohOBUWiYTK33tUgx2Zwbrk.jpg" alt="Scenery Image">
+            <div class="hero-text">
+                <h1>Welcome to My Portfolio</h1>
+                <p>I am a software developer with experience in Python, JavaScript, and more.</p>
+            </div>
+        </section>
+        
+    </main>
+    <footer>
+        <p>&copy; 2023 My Portfolio</p>
+    </footer>
+</body>
+<script>
+	window.addEventListener('load', () => {
+	registerSW();
+	});
+
+	// Register the Service Worker
+	async function registerSW() {
+	if ('serviceWorker' in navigator) {
+		try {
+		await navigator
+				.serviceWorker
+				.register('serviceworker.js');
+		}
+		catch (e) {
+		console.log('SW registration failed');
+		}
+	}
+	}
+</script>
+</html>
