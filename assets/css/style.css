@@ -1,25 +1,5 @@
-/*-----------------------------------*\
-  #style.css
-\*-----------------------------------*/
-
-/**
- * copyright 2022 codewithsadee
- */
-
-
-
-
-
-/*-----------------------------------*\
-  #CUSTOM PROPERTY
-\*-----------------------------------*/
 
 :root {
-
-  /**
-   * colors
-   */
-
   --hoockers-green_20: hsl(148, 20%, 38%, 0.2);
   --pale-spring-bud: hsl(60, 68%, 85%);
   --hoockers-green: hsl(148, 20%, 38%);
@@ -36,10 +16,6 @@
   --black_5: hsla(0, 0%, 0%, 0.05);
   --white: hsl(0, 0%, 100%);
   --black: hsl(0, 0%, 0%);
-
-  /**
-   * gradient color
-   */
 
   --gradient: linear-gradient(to right, transparent 50%, var(--white_30) 100%);
 
@@ -1325,19 +1301,16 @@ body {
     padding-block: 18px;
     z-index: 4;
   }
-
   .navbar .navbar-list {
     display: flex;
     justify-content: center;
     gap: 45px;
   }
-
   .navbar .navbar-link {
     color: var(--black);
     font-size: var(--fs-7);
     font-weight: var(--fw-600);
   }
-
   .navbar .navbar-link::after {
     bottom: 0;
     left: 0;
@@ -1348,11 +1321,9 @@ body {
     transform: scaleX(0);
     transform-origin: left;
   }
-
   .navbar .navbar-link:is(:hover, :focus)::after {
     transform: scaleX(1);
   }
-
   .header-top.active .navbar {
     position: fixed;
     top: -80px;
@@ -1367,46 +1338,15 @@ body {
     box-shadow: none;
     transform: translateY(0);
   }
-
-
-
-  /**
-   * HERO
-   */
-
   .hero-card { padding: 120px 100px; }
-
   .hero-text { max-width: 40ch; }
-
-
-
-  /**
-   * BANNER
-   */
-
   .banner-card-1 .card-title { max-width: 15ch; }
-
-
-
-  /**
-   * FEATURE
-   */
-
   .feature .section-title { margin-block-end: 60px; }
-
   .feature .flex-list {
     gap: 100px;
     padding-inline: 50px;
   }
-
   .feature .flex-item { max-width: calc(33.33% - 66.66px); }
-
-
-
-  /**
-   * OFFER
-   */
-
   .offer .container { gap: 120px; }
 
 }

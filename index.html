@@ -5,41 +5,63 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="viewport"
+        content="width=device-width,
+                 initial-scale=1">
+  <meta http-equiv="X-UA-Compatible"
+        content="ie=edge">
   <title>Glowing - Reveal The Beauty of Skin</title>
 
-  <!-- 
-    - favicon
-  -->
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
 
-  <!-- 
-    - custom css link
-  -->
   <link rel="stylesheet" href="./assets/css/style.css">
 
-  <!-- 
-    - google font link
-  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- 
-    - preload images
-  -->
+ 
   <link rel="preload" as="image" href="./assets/images/logo.png">
   <link rel="preload" as="image" href="./assets/images/hero-banner-1.jpg">
   <link rel="preload" as="image" href="./assets/images/hero-banner-2.jpg">
   <link rel="preload" as="image" href="./assets/images/hero-banner-3.jpg">
-
+  <link rel="manifest" href="manifest.json">
+  <script src="serviceworker.js"></script>
 </head>
 
 <body id="top">
-
-  <!-- 
-    - #HEADER
-  -->
-
+  <script>
+		// Add event listener to execute code when page loads
+		window.addEventListener('load', () => {
+			// Call registerSW function when page loads
+			registerSW();
+		});
+	
+		// Register the Service Worker
+		async function registerSW() {
+			// Check if browser supports Service Worker
+			if ('serviceWorker' in navigator) {
+				try {
+					// Register the Service Worker named 'serviceworker.js'
+					await navigator.serviceWorker.register('serviceworker.js');
+				}
+				catch (e) {
+					// Log error message if registration fails
+					console.error('ServiceWorker registration failed: ', e);
+				}
+			}
+		}
+		if ('Notification' in window) {
+			Notification.requestPermission().then(function (permission) {
+				if (permission === 'granted') {
+					console.log('Notification permission granted.');
+				} else {
+					console.warn('Notification permission denied.');
+				}
+			});
+		}
+	</script>
   <header class="header">
 
     <div class="alert">
